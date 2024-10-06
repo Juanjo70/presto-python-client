@@ -1,0 +1,14 @@
+import openai
+
+# Configura la clave API de OpenAI
+openai.api_key = 'tu_clave_api_aqui'
+
+# Envía una solicitud para obtener embeddings de un texto
+response = openai.Embedding.create(input="Este es el texto para el que quiero obtener embeddings",
+    model="text-embedding-3-large")
+
+# Extrae los embeddings de la respuesta
+embeddings = response['data'][0]['embedding']
+
+# Imprime los embeddings
+print(embeddings)
